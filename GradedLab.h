@@ -1,19 +1,18 @@
 #include <iostream>
 using namespace std;
-class Student{
+class Library{
 private:
+	char *tile;
 	char *name;
-	int rollnumber;
-	int numberofquizes;
-	int *markobtained;
-	int totalmarks;
+	int year;
+	float ISBN;
+	
+
 public:
-	    Student();
-       	Student(char *name2, int age2, int numberofquizes2, int *markobtained2, int totalmarks2);
-       	
-    
+	    
+       	Library(char *tile2,char *name2,int year2,float ISBN2);
        	void getinputfromuser();
-        void inputmarks();
+        
         void display();
 
 };
