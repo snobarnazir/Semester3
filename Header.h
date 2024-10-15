@@ -1,57 +1,45 @@
 #include <iostream>
 using namespace std;
-#include <string>
 
-
-
-class University{
-private:
-
-	string departmentname;
-	int numberofproffessor;
-	int numberofstaffmembers;
-
-
-public:
-	University(){}
-	University(string departmentname2, int numberofproffessor2, int numberofstaffmembers2);
-	void InfoaboutDepartmentdisplay();
-
-};
-class Departements {
-
-private:
-	int numberofdepartement;
-
-	string departmentname;
-	int numberofproffessor;
-	int numberofstaffmembers;
-
-	string professorname;
-	int professorage;
-	string professoreducation;
-	float professorsalary;
-public:
-	Departements(){}
-	Departements(string professorname2, int professorage2, string professoreducation2, float professorsalary2);
-	void infodepartemnt();
+class Employee {
+	private:
+		char *name;
+		char *employeeid;
+		char *city;
+	public:
+	Employee(){}	
+	Employee(char *name2,char *employeeid2,char *city2);
+	~Employee();
+	Employee(Employee &obj);
+	Employee operator ==(Employee obj);
+	void nameset(char *name2);
+	void employeeidset(char *employeeid2);
+	void cityset(char *city2);
+	char *nameget();
+	char *employeeidget();
+	char *cityget();
 	void display();
-
-
+				
+};
+class Department {
+	private:
+		char *departmentName;
+		char  *head ; 
+		int   employees; 
+	public:
+		Department(){}
+		Department(	char *departmentName2,char  *head2,int   employees2);
+		~Department();
+		Department(Department &obj);
+		Department operator ==(Department obj);
+	   
+	    void departmentNameset(char *departmentName2);
+	    void headset(char *head2);
+	    void employeesset(int employees2);
+     	char *departmentNameget();
+    	char *headget();
+	    int  employeesget();
+    	void display();
+		
 };
 
-class professor{
-private:
-	string professorname;
-	int professorage;
-	string professoreducation;
-	float professorsalary;
-	int numberofprofessor;
-public:
-	void infoaboutprofessor();
-
-
-
-
-
-};
