@@ -1,0 +1,73 @@
+#include <iostream>
+
+class Date {
+private:
+    int *Day;
+    int *Month;
+    int *Year;
+
+public:
+    // Default constructor
+    Date() {
+        Day = new int(1);
+        Month = new int(1);
+        Year = new int(2000);
+    }
+
+    // Parameterized constructor with validation
+    Date(int _day, int _month, int _year) {
+        Year = new int(_year);
+        
+        if (_month >= 1 && _month <= 12) {
+            Month = new int(_month);
+        } else {
+            std::cerr << "Invalid month value. Setting to default (1)." << std::endl;
+            Month = new int(1);
+        }
+        
+        if (_day >= 1 && _day <= 31) {
+            Day = new int(_day);
+        } else {
+            std::cerr << "Invalid day value. Setting to default (1)." << std::endl;
+            Day = new int(1);
+        }
+    }
+
+    // Display function
+    void display() {
+        std::cout << "Date: " << *Day << "/" << *Month << "/" << *Year << std::endl;
+    }
+
+    // Destructor
+    ~Date() {
+        delete Day;
+        delete Month;
+        delete Year;
+    }
+};
+
+int main() {
+    int birthDay, birthMonth, birthYear;
+    int currentDay, currentMonth, currentYear;
+
+    // Input birthdate
+    std::cout << "Enter your birthdate (day month year): ";
+    std::cin >> birthDay >> birthMonth >> birthYear;
+
+    // Input current date
+    std::cout << "Enter the current date (day month year): ";
+    std::cin >> currentDay >> currentMonth >> currentYear;
+
+    // Create objects
+    Date birthDateObj(birthDay, birthMonth, birthYear);
+    Date currentDateObj(currentDay, currentMonth, currentYear);
+
+    // Display dates
+    std::cout << "Your birthdate: ";
+    birthDateObj.display();
+
+    std::cout << "Current date: ";
+    currentDateObj.display();
+
+    return 0;
+}
