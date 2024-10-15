@@ -1,20 +1,16 @@
 #include <iostream>
 using namespace std;
- class Acumulator
-{
-    private :
-        int con=0;
-    public:
-	
-        void add();
-        friend void print(Acumulator); 
-};
- class Acumulator2
-{
-    private :
-        int con=0;
-    public:
-	
-        void add();
-        friend void print(Acumulator2); 
+class fraction{
+	private:
+	 int numerator;
+    int denominator;
+   
+	public:
+		fraction(){};
+		fraction(int num, int den);
+		fraction operator +(fraction obj1);
+		fraction operator -(fraction obj2);
+		fraction operator /(fraction obj3);
+		fraction operator *(fraction obj4);
+	    void display();
 };
